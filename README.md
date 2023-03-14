@@ -1,4 +1,4 @@
-# carbon_footprint_calc
+# flutter dev app
 
 A new Flutter project.
 
