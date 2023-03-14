@@ -82,48 +82,6 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(
                   height: 12,
                 ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Icon(
-                      str ? Icons.person_add : Icons.account_balance,
-                      color: Colors.green,
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.green),
-                      ),
-                      child: DropdownButton<String>(
-                        alignment: Alignment.center,
-                        value: dropdownvalue,
-                        icon: const Icon(Icons.arrow_drop_down),
-                        elevation: 16,
-                        style:
-                            const TextStyle(fontSize: 18, color: Colors.green),
-                        onChanged: (String? value) {
-                          // This is called when the user selects an item.
-                          setState(() {
-                            dropdownvalue = value!;
-                            str = !str;
-                          });
-                        },
-                        items:
-                            list.map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ],
-                ),
                 SizedBox(
                   height: 12,
                 ),
