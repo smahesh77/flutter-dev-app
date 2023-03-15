@@ -11,49 +11,159 @@ class Options extends StatefulWidget {
 class _OptionsState extends State<Options> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('My App'),
+    return Stack(children: [
+      Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("images/5333978.jpg"), fit: BoxFit.cover)),
       ),
-      body: Container(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      Scaffold(
+        backgroundColor: Colors.transparent,
+        body: GridView.count(
+          crossAxisCount: 2, // Number of columns in the grid
           children: <Widget>[
-            SizedBox(
-              height: 100.0,
+            // First card
+            Card(
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Ink.image(
+                    image: AssetImage("images/4873.jpg"),
+                    // colorFilter:ColorFilter.,
+                    child: InkWell(
+                      onTap: () {},
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                  // Text('Travel')
+                ],
+              ),
             ),
-            TextButton(
-              child: Text('Home'),
-              onPressed: () {
-                // TODO: Add navigation to the home screen
-              },
+            // Second card
+            Card(
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Ink.image(
+                    image: AssetImage("images/6157.jpg"),
+                    child: InkWell(
+                      onTap: () {},
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                  Text(
+                    'Home',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.greenAccent),
+                  )
+                ],
+              ),
             ),
-            SizedBox(
-              height: 16.0,
+            // Third card
+            Card(
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Ink.image(
+                    image: AssetImage("images/19198323.jpg"),
+                    child: InkWell(
+                      onTap: () {},
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                  Text(
+                    'Primary Needs',
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue),
+                  )
+                ],
+              ),
+            ), // Fourth card
+            Card(
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Ink.image(
+                    image: AssetImage("images/5573.jpg"),
+                    child: InkWell(
+                      onTap: () {},
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                  Text(
+                    'Secondary Needs',
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.deepOrangeAccent),
+                  )
+                ],
+              ),
             ),
-            TextButton(
-              child: Text('Travel'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => CarbonFootprintPage()),
-                );
-              },
+
+            Card(
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Ink.image(
+                    image: AssetImage("images/1134.jpg"),
+                    child: InkWell(
+                      onTap: () {},
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                  Text(
+                    'Graphical Analysis',
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.pinkAccent),
+                  )
+                ],
+              ),
             ),
-            SizedBox(
-              height: 16.0,
+            Card(
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Ink.image(
+                    image: AssetImage("images/2323.jpg"),
+                    child: InkWell(
+                      onTap: () {},
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ],
+              ),
             ),
-            TextButton(
-              child: Text('Secondary'),
-              onPressed: () {
-                // TODO: Add navigation to the secondary screen
-              },
+            Card(
+              child: Stack(
+                alignment: Alignment.topCenter,
+                children: [
+                  Ink.image(
+                    image: AssetImage("images/3081627.jpg"),
+                    child: InkWell(
+                      onTap: () {},
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                  Text(
+                    'Suggestion Box',
+                    style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blueAccent),
+                  )
+                ],
+              ),
             ),
           ],
         ),
-      ),
-    );
+      )
+    ]);
   }
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "832433334753",
+    "project_id": "carboncalc-5bdf0",
+    "storage_bucket": "carboncalc-5bdf0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832433334753:android:f5c410241dacfbdbef0aa0",
+        "android_client_info": {
+          "package_name": "com.qwerty.carbon_footprint_calc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832433334753-dbrp0g60iodemphu4kftnamgnr7jts7v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm2vNpoH3ns3o-7jIEKWs-zdHz4fRXiTM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832433334753-dbrp0g60iodemphu4kftnamgnr7jts7v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

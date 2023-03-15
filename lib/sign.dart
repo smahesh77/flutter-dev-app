@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
 import 'options.dart';
-
-List<String> list = ["individual", "organisation"];
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -12,8 +12,11 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  String dropdownvalue = list.first;
-  bool str = true;
+  String email = '';
+  String password = "";
+
+  final _firestore = FirebaseFirestore.instance;
+  final _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -41,6 +44,11 @@ class _SignUpState extends State<SignUp> {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: TextField(
+                    onChanged: (val) {
+                      setState(() {
+                        email = val;
+                      });
+                    },
                     style: TextStyle(color: Colors.lightGreenAccent),
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -49,7 +57,6 @@ class _SignUpState extends State<SignUp> {
                       ),
                       hintText: "Username",
                       hintStyle: TextStyle(color: Colors.green),
-//border: InputBorder.none,
                       icon: Icon(
                         Icons.person,
                         color: Colors.green,
@@ -63,6 +70,11 @@ class _SignUpState extends State<SignUp> {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: TextField(
+                    onChanged: (val) {
+                      setState(() {
+                        password = val;
+                      });
+                    },
                     obscureText: true,
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
@@ -88,11 +100,13 @@ class _SignUpState extends State<SignUp> {
                 Container(
                   width: 250,
                   child: ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
+                      await _auth.createUserWithEmailAndPassword(
+                          email: email, password: password);
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const Options()),
+                            builder: (context) => const Homepage()),
                       );
                     },
                     child: Text("SIGN UP"),
