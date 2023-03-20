@@ -29,8 +29,13 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  chat_gpt_sdk:
+    git:
+      url: https://github.com/iampawan/Flutter-ChatGPT.git
   flutter:
     sdk: flutter
+  flutter_dotenv: ^5.0.2
+  velocity_x: ^3.6.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -41,6 +46,7 @@ dependencies:
   cloud_firestore: ^4.4.4
   lottie: ^2.3.0
   syncfusion_flutter_charts: ^20.4.54
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
