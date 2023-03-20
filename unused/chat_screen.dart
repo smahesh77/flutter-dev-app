@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import 'chatmessage.dart';
+import '../lib/chatmessage.dart';
 import 'threedots.dart';
 
 class ChatScreen extends StatefulWidget {
